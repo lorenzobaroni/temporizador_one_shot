@@ -33,6 +33,21 @@ int64_t turn_off_callback_azul(alarm_id_t id, void *user_data) {
     return 0;
 }
 
+// Callback chamado ao pressionar o botão
+void tratar_botao(uint gpio, uint32_t eventos) {
+    if (!pode_pressionar) return; // Impede acionamento enquanto LEDs ainda estão ativos
+
+   
+    gpio_put(LED_AZUL, 1);
+    gpio_put(LED_VERMELHO, 1);
+    gpio_put(LED_VERDE, 1);
+
+    pode_pressionar = false; // Bloqueia novos acionamentos até ciclo terminar
+
+    // Agenda desligamento dos LEDs com atraso de 3 segundos cada
+    add_alarm_in_ms(3000, turn_off_callback_azul, NULL, false);
+}
+
 int main() {
     stdio_init_all();
 
@@ -53,6 +68,9 @@ int main() {
     gpio_init(BOTAO);
     gpio_set_dir(BOTAO, GPIO_IN);
     gpio_pull_up(BOTAO);
+
+    // Configura interrupção do botão para detectar borda de descida
+    gpio_set_irq_enabled_with_callback(BOTAO, GPIO_IRQ_EDGE_FALL, true, tratar_botao);
 
     while (true) {
         sleep_ms(100); // Aguarda para evitar consumo excessivo da CPU
