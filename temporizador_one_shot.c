@@ -45,7 +45,7 @@ void tratar_botao(uint gpio, uint32_t eventos) {
     if (!pode_pressionar || debounce_ativo) return; // Evita acionamentos indesejados
 
     debounce_ativo = true; // Ativa debounce
-    add_alarm_in_ms(200, debounce_callback, NULL, false); // 50ms de debounce
+    add_alarm_in_ms(200, debounce_callback, NULL, false); // 200ms de debounce
 
     // Liga os LEDs
     gpio_put(LED_AZUL, 1);
