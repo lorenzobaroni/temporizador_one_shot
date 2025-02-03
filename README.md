@@ -1,20 +1,20 @@
-# Temporizador One-Shot com Raspberry Pi Pico
+# Temporizador One-Shot com Raspberry Pi Pico W
 
 ## 📌 Descrição do Projeto
-Este projeto implementa um sistema utilizando um **temporizador de um disparo (One-Shot Timer)** no **Raspberry Pi Pico**. O sistema possui **três LEDs** (vermelho, verde e azul) e um **botão de disparo**. Quando o botão é pressionado, os LEDs são acesos sequencialmente, cada um permanecendo aceso por **3 segundos** antes de apagar.
+Este projeto implementa um sistema utilizando um **temporizador de um disparo (One-Shot Timer)** no **Raspberry Pi Pico W**. O sistema possui **três LEDs** (vermelho, verde e azul) e um **botão de disparo**. Quando o botão é pressionado, os LEDs são acesos sequencialmente, cada um permanecendo aceso por **3 segundos** antes de apagar.
 
 ## 🔗 Link do Vídeo Ensaio
 
-[Demonstração de Funcionamento do Projeto]()
+[Demonstração de Funcionamento do Projeto](https://www.youtube.com/watch?v=8YaI7uup6ns&ab_channel=LorenzoGiuseppeOliveiraBaroni)
 
 ## Estrutura do Projeto
 ### Componentes Utilizados:
-- **Microcontrolador:** Raspberry Pi Pico / BitDogLab
+- **Microcontrolador:** Raspberry Pi Pico W / BitDogLab
 - **LEDs:** Vermelho, Verde e Azul
 - **Resistores:** 330Ω para cada LED
 - **Botão:** Interruptor de pulso
 - **Linguagem:** C/C++
-- **Ferramentas:** SDK do Raspberry Pi Pico, CMake, VS Code
+- **Ferramentas:** SDK do Raspberry Pi Pico W, CMake, VS Code
 
 ## Esquema de Ligacao
 A estrutura física do circuito é baseada na seguinte distribuição:
@@ -40,7 +40,7 @@ O circuito foi projetado conforme a imagem de referência.
 
 ## Como Executar o Projeto
 ### 1. Configuração do Ambiente
-Certifique-se de ter o **SDK do Raspberry Pi Pico** instalado. No VS Code:
+Certifique-se de ter o **SDK do Raspberry Pi Pico W** instalado. No VS Code:
 1. Clone este repositório:
    ```bash
    git clone https://github.com/lorenzobaroni/temporizador_one_shot
@@ -52,7 +52,7 @@ Certifique-se de ter o **SDK do Raspberry Pi Pico** instalado. No VS Code:
 4. Clique no arquivo diagram.json e teste o projeto no simulador do WOKWI Integrado no VS Code
 
 5. Envie o binário para a placa:
-   - Conecte o **Raspberry Pi Pico** enquanto segura o **BOOTSEL**.
+   - Conecte o **Raspberry Pi Pico W** enquanto segura o **BOOTSEL**.
    - Copie o arquivo `.uf2` gerado para a unidade USB montada.
 
 ## Licença
