@@ -4,9 +4,9 @@
 #include "hardware/timer.h"
 
 // Definições de pinos
-#define LED_AZUL  11
-#define LED_VERMELHO 12
-#define LED_VERDE 13
+#define LED_VERDE 11
+#define LED_AZUL  12
+#define LED_VERMELHO 13
 #define BOTAO 5
 
 // Variável para controlar se o botão pode ser pressionado novamente
